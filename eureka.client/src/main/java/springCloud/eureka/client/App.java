@@ -15,7 +15,6 @@ public class App {
 
 	@RequestMapping("/")
 	public String home() {
-		System.out.println("eurake.client");
 		return "Hello world 我是 eurake.client ";
 	}
 
