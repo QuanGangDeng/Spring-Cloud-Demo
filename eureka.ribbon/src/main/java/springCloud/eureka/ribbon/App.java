@@ -35,6 +35,12 @@ public class App {
 		return template;
 	}
 
+	/**
+	 * 如果要访问不同服务url <br>
+	 * 可以在 http://eureka.client/<br>
+	 * 后添加具体路径 如：/queryOrder 默认路径为 /
+	 * @return
+	 */
 	@RequestMapping("/loadbalance")
 	public String helloWorld() {
 		return client.getForObject("http://eureka.client/", String.class);
