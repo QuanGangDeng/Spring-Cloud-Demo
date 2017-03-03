@@ -1,0 +1,19 @@
+server:
+  port: 7071
+spring:
+  application:
+    name: server-01
+eureka:
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 3000
+  client:
+    healthcheck:
+      enabled:true
+    serviceUrl:
+      defaultZone: http://localhost:7070/eureka/,http://localhost:7072/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 30
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
